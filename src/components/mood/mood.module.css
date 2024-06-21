@@ -1,0 +1,115 @@
+.mood {
+  position: relative;
+  border-radius: 0 2.5rem 2.5rem 0;
+  background: var(--White, #fff);
+  overflow: hidden;
+
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --eyebrow: var(--Midnight-100);
+  --title: var(--White);
+  --message: var(--Lavender-100);
+}
+
+.pleasant {
+  --eyebrow: #000;
+  --title: #000;
+  --message: #000;
+}
+
+.foreground {
+  position: relative;
+  z-index: 100;
+}
+
+.content {
+  margin-bottom: 1.5rem;
+  max-width: 30rem +2rem;
+  padding: 2rem;
+}
+
+.eyebrow {
+  color: var(--eyebrow, #f5f6f4);
+  text-align: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1rem; /* 114.286% */
+  letter-spacing: 0.0875rem;
+  margin-bottom: 2rem;
+  font-variant-numeric: tabular-nums;
+  transition: all ease-in-out 0.3s;
+}
+
+.title {
+  color: var(--title, #fff);
+  text-align: center;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 2rem; /* 66.667% */
+  letter-spacing: -0.045rem;
+  margin-bottom: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  transition: all ease-in-out 0.3s;
+}
+
+.message {
+  color: var(--message, #f1f5fe);
+  text-align: center;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875rem; /* 136.364% */
+  letter-spacing: -0.01375rem;
+  max-width: 30rem;
+  margin: 0 auto;
+  font-variant-numeric: tabular-nums;
+  transition: all ease-in-out 0.3s;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emoji-group {
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.emoji {
+  position: absolute;
+  opacity: 0;
+  z-index: 10;
+  transition: ease-in-out all 0.3s;
+}
+.emoji--active {
+  opacity: 1;
+  z-index: 100;
+  transition: ease-in-out all 0.3s;
+}
+
+.background {
+  position: relative;
+  z-index: 50;
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.background__pleasant {
+  width: 100%;
+  height: auto;
+}

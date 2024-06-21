@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model mood_trackers {
+  id         String   @id(map: "PK_ff827392594a334e6909eb42865") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  user_id    String   @db.Uuid
+  type       String
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  users      users    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_2a85898ca76d58a6d820afe4def")
+
+  @@map("mood-trackers")
+}
+
+model users {
+  id            String          @id(map: "PK_a3ffb1c0c8416b9fc6f907b7433") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  email         String          @unique(map: "UQ_97672ac88f789774dd47f7c8be3")
+  password      String
+  fullName      String
+  isActive      Boolean         @default(true)
+  roles         String[]        @default(["user"])
+  mood_trackers mood_trackers[]
+}

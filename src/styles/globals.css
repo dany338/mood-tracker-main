@@ -1,0 +1,58 @@
+:root {
+  --white: #ffffff;
+  --Lavender-100: #f1f5fe;
+  --Lavender-300: #8582dd;
+  --Midnight-100: #f5f6f4;
+  --Midnight-200: #c6c5c5;
+  --Midnight-300: #6c757d;
+  --Midnight-400: #2e2f39;
+  --Lavender-200: #c2c0f9;
+  --Lavender-200-opacity: #c2c0fa7f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  font-family: sans-serif;
+  background-color: #f2f5fd;
+}
+
+body {
+  min-height: 100svh;
+}
+
+.main {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 368px;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.current-mood {
+  min-height: 20px;
+  min-width: 20px;
+  background-color: white;
+  border-radius: 2.5rem;
+  background: var(--White, #fff);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

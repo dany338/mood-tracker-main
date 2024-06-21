@@ -1,0 +1,147 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: var(--Lavender-100);
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar__list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  overflow: scroll;
+}
+
+.sidebar__list:before,
+.sidebar__list:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 7rem;
+  z-index: 100;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.sidebar__list:before {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 0) 0%,
+    var(--Lavender-100) 75%
+  );
+}
+.sidebar__list:after {
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    var(--Lavender-100) 25%,
+    rgba(2, 0, 36, 0) 100%
+  );
+}
+
+.scrollable {
+  flex: 1;
+  overflow: scroll;
+  outline: solid 1px red;
+  padding: 3.5rem 1.5rem 10rem;
+}
+
+.sidebar__footer {
+  padding: 1.5rem;
+}
+
+.sidebar__add_button {
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mood_preview {
+  position: relative;
+  display: flex;
+  width: 20rem;
+  padding: 1.5rem;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  background: var(--White, #fff);
+  margin-bottom: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  border: solid 2px transparent;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.mood_preview:hover,
+.mood_preview:focus {
+  border-color: var(--Lavender-300);
+}
+
+.mood_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.mood_name {
+  text-align: left;
+  color: var(--Midnight-400, #2e2f39);
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1rem; /* 100% */
+  letter-spacing: -0.01rem;
+}
+.mood_date {
+  text-align: left;
+  color: var(--Midnight-300, #6c757d);
+
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+/*  */
+
+.sidebar__add_button {
+  display: flex;
+  padding: 2rem 2.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+
+  border-radius: 1.5rem;
+  background: var(--Lavender-300, #8582dd);
+  color: var(--White, #fff);
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  border: none;
+  transition: all ease-in-out 0.3s;
+  border: solid 2px transparent;
+}
+
+.sidebar__add_button:hover,
+.sidebar__add_button:focus {
+  background-color: var(--Lavender-100);
+  border-color: var(--Lavender-300);
+  color: var(--Lavender-300);
+}
